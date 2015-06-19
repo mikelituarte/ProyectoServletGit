@@ -26,4 +26,13 @@
       <url-pattern>/MiServlet</url-pattern>
   </servlet-mapping>
   
+    <servlet>
+      <servlet-name>ServletObtenerEmpleado</servlet-name>
+      <servlet-class>practica1.servlet.ServletObtenerEmpleado</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>ServletObtenerEmpleado</servlet-name>
+      <url-pattern>/ServletObtenerEmpleado</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
