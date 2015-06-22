@@ -182,6 +182,137 @@ public class Employees implements java.io.Serializable {
 		Employees e = (Employees)arg0;
 		return (this.employeeId == e.getEmployeeId() && this.firstName.equals(e.getFirstName()));
 	}
+	
+	public String imprimirEmpleado(){
+		String res = "";
+		 /*res+= "<B>employeeId: </B>"+employeeId+
+		 "<br><B>Jobs ID: </B>" +jobs.getJobId()+
+		 "<br><B>Departments: </B>"+ departments.getDepartmentId() +
+		 "<br><B>Employees: </B>" + employees.getEmployeeId() +
+		 "<br><B>First Name: </B>" + firstName +
+		 "<br><B>Last Name: </B>" +lastName + 
+		 "<br><B>Email: </B>"+ email + 
+		 "<br><B>Phone Number: </B>" + phoneNumber +
+		 "<br><B>Date: </B>" + hireDate +
+		 "<br><B>Salary: </B>" + salary +
+		 "<br><B>Conmission Pot: </B>" + commissionPct +*/
+		 res +=
+		 "<br><TABLE BORDER=3 WIDTH=300>" +
+
+ 		 	"<TR ALIGN=CENTER BORDER=3>" +
+ 		 		"<TD WIDTH=200 HEIGHT= 30 ALIGN=CENTER BGCOLOR=#DFDFDF BORDER=3>" +
+ 		 			"<B>Employee Id </B>"+
+ 		 		"</TD>" +
+ 		 	
+ 		 		"<TD WIDTH=200 ALIGN=CENTER BGCOLOR=#DFDFDF>" +
+ 		 		+employeeId+
+ 		 		"</TD>" +
+ 		 	
+ 		 	"</TR>" +
+ 		 	
+ 		 	"<TR ALIGN=CENTER>" +
+ 		 		"<TD WIDTH=200 HEIGHT= 30 ALIGN=CENTER BGCOLOR=#F3F3F3>" +
+ 		 			"<B>Jobs ID </B>" +
+ 		 		"</TD>" +
+		 	
+		 		"<TD WIDTH=200 ALIGN=CENTER BGCOLOR=#F3F3F3>" +
+		 		jobs.getJobId() +
+		 		"</TD>" +
+		 	"</TR>" +
+		 		
+ 		 	"<TR ALIGN=CENTER>" +
+		 		"<TD WIDTH=200 HEIGHT= 30 ALIGN=CENTER BGCOLOR=#DFDFDF>" +
+		 			"<B>Departments </B>"+
+		 		"</TD>" +
+		 	
+		 		"<TD WIDTH=200 ALIGN=CENTER BGCOLOR=#DFDFDF>" +
+		 			departments.getDepartmentId() +
+		 		"</TD>" +
+		 	"</TR>" +	
+		 		
+ 		 	"<TR ALIGN=CENTER>" +
+		 		"<TD WIDTH=200 HEIGHT= 30 ALIGN=CENTER BGCOLOR=#F3F3F3>" +
+		 			"<B>Employees </B>"+
+		 		"</TD>" +
+		 	
+		 		"<TD WIDTH=200 ALIGN=CENTER BGCOLOR=#F3F3F3>" +
+		 			employees.getEmployeeId() +
+		 		"</TD>" +
+		 	"</TR>" +	
+		 		
+ 		 	"<TR ALIGN=CENTER>" +
+		 		"<TD WIDTH=200 HEIGHT= 30 ALIGN=CENTER BGCOLOR=#DFDFDF>" +
+		 			"<B>First Name </B>"+
+		 		"</TD>" +
+		 	
+		 		"<TD WIDTH=200 ALIGN=CENTER BGCOLOR=#DFDFDF>" +
+		 			firstName +
+		 		"</TD>" +
+		 	"</TR>" +
+		 		
+ 		 	"<TR ALIGN=CENTER>" +
+		 		"<TD WIDTH=200 HEIGHT= 30 ALIGN=CENTER BGCOLOR=#F3F3F3>" +
+		 			"<B>Last Name </B>"+
+		 		"</TD>" +
+		 	
+		 		"<TD WIDTH=200 ALIGN=CENTER BGCOLOR=#F3F3F3>" +
+		 			lastName +
+		 		"</TD>" +
+		 	"</TR>" +
+		 
+ 		 	"<TR ALIGN=CENTER>" +
+		 		"<TD WIDTH=200 HEIGHT= 30 ALIGN=CENTER BGCOLOR=#DFDFDF>" +
+		 			"<B>Email</B>"+
+		 		"</TD>" +
+		 	
+		 		"<TD WIDTH=200 ALIGN=CENTER BGCOLOR=#DFDFDF>" +
+		 			email +
+		 		"</TD>" +
+		 	"</TR>" +
+		 
+ 		 	"<TR ALIGN=CENTER>" +
+		 		"<TD WIDTH=200 HEIGHT= 30 ALIGN=CENTER BGCOLOR=#F3F3F3>" +
+		 			"<B>Phone Number</B>"+
+		 		"</TD>" +
+		 	
+		 		"<TD WIDTH=200 ALIGN=CENTER BGCOLOR=#F3F3F3>" +
+		 			phoneNumber +
+		 		"</TD>" +
+		 	"</TR>" +
+		 		
+ 		 	"<TR ALIGN=CENTER>" +
+		 		"<TD WIDTH=200 HEIGHT= 30 ALIGN=CENTER BGCOLOR=#DFDFDF>" +
+		 			"<B>Hire Date</B>"+
+		 		"</TD>" +
+		 	
+		 		"<TD WIDTH=200 ALIGN=CENTER BGCOLOR=#DFDFDF>" +
+		 			hireDate +
+		 		"</TD>" +
+		 	"</TR>" +
+		 		
+ 		 	"<TR ALIGN=CENTER>" +
+		 		"<TD WIDTH=200 HEIGHT= 30 ALIGN=CENTER BGCOLOR=#F3F3F3>" +
+		 			"<B>Salary</B>"+
+		 		"</TD>" +
+		 	
+		 		"<TD WIDTH=200 ALIGN=CENTER BGCOLOR=#F3F3F3>" +
+		 			salary +
+		 		"</TD>" +
+		 	"</TR>" +
+		 		
+ 		 	"<TR ALIGN=CENTER>" +
+		 		"<TD WIDTH=200 HEIGHT= 30 ALIGN=CENTER BGCOLOR=#DFDFDF>" +
+		 			"<B>Commission (%)</B>"+
+		 		"</TD>" +
+		 	
+		 		"<TD WIDTH=200 ALIGN=CENTER BGCOLOR=#DFDFDF>" +
+		 			commissionPct +
+		 		"</TD>" +
+		 	"</TR>" +
+		 
+		 "</TABLE>";
+		 return res;
+	}
 
 
 }

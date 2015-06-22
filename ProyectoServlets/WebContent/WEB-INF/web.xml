@@ -10,29 +10,53 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
-      <servlet-name>PrimeraClase</servlet-name>
-      <servlet-class>PrimeraClase</servlet-class>
+    <servlet-name>PrimeraClase</servlet-name>
+    <servlet-class>PrimeraClase</servlet-class>
   </servlet>
   <servlet-mapping>
-      <servlet-name>PrimeraClase</servlet-name>
-      <url-pattern>/PrimeraClase</url-pattern>
-  </servlet-mapping>
-    <servlet>
-      <servlet-name>MiServlet</servlet-name>
-      <servlet-class>miservlet.MiServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-      <servlet-name>MiServlet</servlet-name>
-      <url-pattern>/MiServlet</url-pattern>
+    <servlet-name>PrimeraClase</servlet-name>
+    <url-pattern>/PrimeraClase</url-pattern>
   </servlet-mapping>
   
-    <servlet>
-      <servlet-name>ServletObtenerEmpleado</servlet-name>
-      <servlet-class>practica1.servlet.ServletObtenerEmpleado</servlet-class>
+  <servlet>
+    <servlet-name>MiServlet</servlet-name>
+    <servlet-class>miservlet.MiServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-      <servlet-name>ServletObtenerEmpleado</servlet-name>
-      <url-pattern>/ServletObtenerEmpleado</url-pattern>
+    <servlet-name>MiServlet</servlet-name>
+    <url-pattern>/MiServlet</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ServletObtenerEmpleado</servlet-name>
+    <servlet-class>practica1.servlet.ServletObtenerEmpleado</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletObtenerEmpleado</servlet-name>
+    <url-pattern>/ServletObtenerEmpleado</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ServletEmpleado</servlet-name>
+    <servlet-class>practicaHibernate.ServletEmpleado</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletEmpleado</servlet-name>
+    <url-pattern>/ServletEmpleado</url-pattern>
+  </servlet-mapping>
+  
+  
+  <listener>
+	<listener-class>practicaHibernate.ClaseHttpSessionListener</listener-class>
+  </listener>
+  
+   <listener>
+	<listener-class>practicaHibernate.ClaseServletContextListener</listener-class>
+  </listener>
+  
+  <listener>
+	<listener-class>practicaHibernate.ClaseServletRequestListener</listener-class>
+  </listener>
+  
   
 </web-app>
