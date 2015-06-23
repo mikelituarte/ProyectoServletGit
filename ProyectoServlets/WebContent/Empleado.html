@@ -6,9 +6,16 @@ body{background-color: #DDDDDD}</style>
 <title>Pagina Empleado</title>
 </head>
 <body>
-	<blink>Introduce un ID de empleado</blink>
+	<blink>Introduce un ID de empleado (Hibernate)</blink>
 	<!--   <form action="ServletObtenerEmpleado" method="get"> -->
 	<form action="ServletEmpleado" method="get">
+	<input type="text" name="id"></>
+	<input type="submit" value="enviar"></>
+	</form>
+	
+	<blink>Introduce un ID de empleado (JDBC)</blink>
+	<!--   <form action="ServletObtenerEmpleado" method="get"> -->
+	<form action="ServletJDBC" method="get">
 	<input type="text" name="id"></>
 	<input type="submit" value="enviar"></>
 	</form>

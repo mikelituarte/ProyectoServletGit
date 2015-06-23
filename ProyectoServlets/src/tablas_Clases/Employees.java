@@ -197,10 +197,10 @@ public class Employees implements java.io.Serializable {
 		 "<br><B>Salary: </B>" + salary +
 		 "<br><B>Conmission Pot: </B>" + commissionPct +*/
 		 res +=
-		 "<br><TABLE BORDER=3 WIDTH=300>" +
+		 "<br><TABLE BORDER=0 WIDTH=300 BGCOLOR = #999999>" +
 
- 		 	"<TR ALIGN=CENTER BORDER=3>" +
- 		 		"<TD WIDTH=200 HEIGHT= 30 ALIGN=CENTER BGCOLOR=#DFDFDF BORDER=3>" +
+ 		 	"<TR ALIGN=CENTER BORDER=3px>" +
+ 		 		"<TD WIDTH=200 HEIGHT= 30 ALIGN=CENTER BGCOLOR=#DFDFDF BORDER=3px>" +
  		 			"<B>Employee Id </B>"+
  		 		"</TD>" +
  		 	

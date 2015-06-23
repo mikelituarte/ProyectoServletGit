@@ -45,6 +45,15 @@
     <url-pattern>/ServletEmpleado</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>ServletJDBC</servlet-name>
+    <servlet-class>practicaJDBC.ServletJDBC</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletJDBC</servlet-name>
+    <url-pattern>/ServletJDBC</url-pattern>
+  </servlet-mapping>
+  
   
   <listener>
 	<listener-class>practicaHibernate.ClaseHttpSessionListener</listener-class>
@@ -57,6 +66,27 @@
   <listener>
 	<listener-class>practicaHibernate.ClaseServletRequestListener</listener-class>
   </listener>
+  
+   
+  <filter>
+    <filter-name>MiFiltro</filter-name>
+    <filter-class>practicaHibernate.MiFiltro</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>MiFiltro</filter-name>
+    <url-pattern>/ServletEmpleado</url-pattern> 
+  </filter-mapping>  
+  
+   <filter>
+    <filter-name>FiltroJDBC</filter-name>
+    <filter-class>practicaJDBC.FiltroJDBC</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>FiltroJDBC</filter-name>
+    <url-pattern>/ServletEmpleado</url-pattern> 
+  </filter-mapping>  
+  
+  
   
   
 </web-app>

@@ -25,10 +25,12 @@ public class ClaseServletContextListener implements ServletContextListener {
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
 		// TODO Auto-generated method stub
+		int numeroPeticiones =0;
 		SessionFactory sf = SesionManager.getSesionFactory();
 		ServletContext servletContext = null;
 		servletContext = sce.getServletContext();
 		servletContext.setAttribute("sf", sf);
+		servletContext.setAttribute("numeroPeticiones", numeroPeticiones);
 		
 		System.out.println("Ha pasado por: ClaseServletContextListener, metodo: contextInitialized");
 	}

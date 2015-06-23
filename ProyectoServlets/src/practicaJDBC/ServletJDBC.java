@@ -1,14 +1,10 @@
-package practicaHibernate;
+package practicaJDBC;
 
-
-
-import hibernateAll.empleadoHibernateDAO.EmpleadoHibernateDAO;
 import interfaces.interfaceRecuperable.Recuperable;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -16,19 +12,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import jdbcAll.jDBC_DAO_DTO.EmpleadoDTO;
+import jdbcAll.jDBC_DAO_DTO.EmpleadoJDBDao;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 
 import servicios.Empleados.EmployeesServices;
 import tablas_Clases.Employees;
 
-//import Empleados.EmployeesServices;
+public class ServletJDBC extends HttpServlet {
 
-
-public class ServletEmpleado extends HttpServlet{
-	
 	private final Logger log = LogManager.getRootLogger();
 	
 	private String botonVolver(){
@@ -42,7 +36,8 @@ public class ServletEmpleado extends HttpServlet{
 	}
 	
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException {
+	
 		
 		int numeroPeticiones =0;
 		ServletContext sc = req.getServletContext();
@@ -50,15 +45,15 @@ public class ServletEmpleado extends HttpServlet{
 		sc.setAttribute("numeroPeticiones", (numeroPeticiones+1));
 		
 		PrintWriter out = null;
-		Employees empleado = null;
+		EmpleadoDTO empleado = null;
 		EmployeesServices es = new EmployeesServices();
-		Recuperable objetoDao = new EmpleadoHibernateDAO();
+		Recuperable objetoDao = new EmpleadoJDBDao();
 		es.setRecuperable(objetoDao);
 		Integer id = new Integer(req.getParameter("id"));
 		try {
-			empleado = (Employees)es.leerEmpleadoServices(id);
+			empleado = (EmpleadoDTO)es.leerEmpleadoServices(id);
 		} catch (ClassNotFoundException | SQLException e) {
-			log.error("Se ha producido un error al leer Empleado por ID en ServletEmpleado metodo doGet");
+			log.error("Se ha producido un error al leer Empleado por ID en ServletJDBC metodo doGet");
 			e.printStackTrace();
 		}
 		if(empleado!=null){
@@ -72,6 +67,7 @@ public class ServletEmpleado extends HttpServlet{
 			
 			out.println("Numero de Peticiones: " + sc.getAttribute("numeroPeticiones"));
 			out.println(botonVolver());
+			
 		}
 		else{
 			resp.setContentType("text/html");
@@ -79,21 +75,8 @@ public class ServletEmpleado extends HttpServlet{
 			out.println("El empleado no Existe");
 		}
 		System.out.println("Ha llamado a doGet");
+		
 	}
 	
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		System.out.println("Ha llamado a doPost");
-		super.doPost(req, resp);
-	}
-	
-	@Override
-	protected void service(HttpServletRequest arg0, HttpServletResponse arg1)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.service(arg0, arg1);
-	}
 	
 }
