@@ -54,6 +54,23 @@
     <url-pattern>/ServletJDBC</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>ServletIncrementarSalario</servlet-name>
+    <servlet-class>practicaHibernate.ServletIncrementarSalario</servlet-class>
+    <init-param>
+        <param-name>
+            incremento
+        </param-name>
+        <param-value>
+            1.20
+        </param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletIncrementarSalario</servlet-name>
+    <url-pattern>/ServletIncrementarSalario</url-pattern>
+  </servlet-mapping>
+  
   
   <listener>
 	<listener-class>practicaHibernate.ClaseHttpSessionListener</listener-class>
@@ -85,6 +102,10 @@
     <filter-name>FiltroJDBC</filter-name>
     <url-pattern>/ServletEmpleado</url-pattern> 
   </filter-mapping>  
+  
+  
+
+  
   
   
   

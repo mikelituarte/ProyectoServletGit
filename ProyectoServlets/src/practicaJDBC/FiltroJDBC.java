@@ -24,16 +24,28 @@ public class FiltroJDBC implements Filter{
 
 	@Override
 	public void doFilter(ServletRequest sreq, ServletResponse sresp, FilterChain fc) throws IOException, ServletException {
-		// TODO Auto-generated method stub
-		long antes;
+
+			//Integer id = new Integer(sreq.getParameter("id"));
+			long antes;
+			antes = System.currentTimeMillis();
+			log.trace("Ha entrado en doFilter de la clase MiFiltro");
+			fc.doFilter(sreq, sresp);
+			long despues;
+			despues = System.currentTimeMillis();
+			log.trace("------------");
+			log.trace("tiempo con JDBC: "+(despues-antes));
+			log.trace("xxxxxxxxxxxx");
+			
+		
+		/*long antes;
 		antes = System.currentTimeMillis();
 		log.trace("Ha entrado en doFilter de la clase MiFiltro");
 		fc.doFilter(sreq, sresp);
 		long despues;
 		despues = System.currentTimeMillis();
 		log.trace("------------");
-		log.trace("tiempo con JDBC"+(despues-antes));
-		log.trace("xxxxxxxxxxxx");
+		log.trace("tiempo con JDBC: "+(despues-antes));
+		log.trace("xxxxxxxxxxxx");*/
 	}
 
 	@Override

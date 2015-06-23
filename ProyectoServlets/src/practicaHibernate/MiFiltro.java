@@ -34,6 +34,7 @@ public class MiFiltro implements Filter{
 	@Override
 	public void doFilter(ServletRequest sreq, ServletResponse sresp, FilterChain fc) throws IOException, ServletException {
 		// TODO Auto-generated method stub
+		
 		long antes;
 		antes = System.currentTimeMillis();
 		log.trace("Ha entrado en doFilter de la clase MiFiltro");
@@ -41,7 +42,7 @@ public class MiFiltro implements Filter{
 		long despues;
 		despues = System.currentTimeMillis();
 		log.trace("------------");
-		log.trace("tiempo con Hibernate"+(despues-antes));
+		log.trace("tiempo con Hibernate: "+(despues-antes));
 		log.trace("xxxxxxxxxxxx");
 		
 	}
