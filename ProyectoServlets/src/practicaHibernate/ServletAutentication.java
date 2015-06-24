@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -25,7 +26,8 @@ public class ServletAutentication extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+
+		HttpSession httpSesion = null; 
 		Usuario usuario = null;
 		//boolean existe = false;
 		PrintWriter out = null;
@@ -40,6 +42,13 @@ public class ServletAutentication extends HttpServlet {
 		}
 		if(usuario != null){
 			out.println("Bienvenido <b>"+ usuario.getNombre()+ "</b>");
+			if (req.getSession(false) == null){
+				httpSesion = req.getSession(); 
+				httpSesion.setAttribute("user_name", usuario.getNombre());
+				log.trace("leemos el atributo \"user_name\" de la sesion: " + req.getSession(false).getAttribute("user_name"));
+			}
+			else
+				log.trace("Ya existia la sesion:");
 		}
 		else
 			out.println("El usuario NO existe!");

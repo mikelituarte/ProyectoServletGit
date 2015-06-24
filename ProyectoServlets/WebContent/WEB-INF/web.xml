@@ -80,6 +80,15 @@
     <url-pattern>/ServletAutentication</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>ServletSesion</servlet-name>
+    <servlet-class>practicaHibernate.ServletSesion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletSesion</servlet-name>
+    <url-pattern>/ServletSesion</url-pattern>
+  </servlet-mapping>
+  
   
   <listener>
 	<listener-class>practicaHibernate.ClaseHttpSessionListener</listener-class>

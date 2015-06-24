@@ -18,7 +18,6 @@ public class UsuarioServices  {
 		UsuarioHibernateDAO uhDao = new UsuarioHibernateDAO();
 		Usuario usuario = (Usuario) uhDao.leerUsuario(nombre);
 		if(usuario != null){
-			log.trace("paaaaaa<"+ pass, " La pas Usuario: "+ usuario.getClave());
 			if(usuario.getClave().equals(pass)){
 				res = true;
 				usuarioDevuelto = usuario;
