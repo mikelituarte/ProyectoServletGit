@@ -33,22 +33,22 @@ public class ServletIncrementarSalario extends HttpServlet{
 		
 		EmployeesServices es = new EmployeesServices();
 		le = es.incrementarSalario(incremento);
-		log.trace("AAAAAXXXAAAAAAAAA");
 		PrintWriter out = null;
 		resp.setContentType("text/html");
 		out = resp.getWriter();
-		if(le!= null){
-			log.trace("BBBBBBBBBxx");
+		if (le != null) {
 
-		Iterator<Employees> it = le.iterator();
-		//while(it.hasNext()){
-			//System.out.println(it.next());
-			out.println("Salario incrementado corectamente");
-		//}
-		/*for(Employees e: le){
-			out.println(e.imprimirEmpleado());
-			out.println("<br>");
-		}*/
+			Iterator<Employees> it = le.iterator();
+			/*
+			 * while(it.hasNext()){ System.out.println(it.next());
+			 * out.println("Salario incrementado corectamente"); }
+			 */
+			for (Employees e : le) {
+				 out.println(e.imprimirEmpleado());
+				 out.println("<br>");
+				//log.trace("Ha entrado en el for each");
+				//System.out.println(e.imprimirEmpleado());
+			}
 		}
 		else
 			out.println("IncrementoSalario");

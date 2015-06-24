@@ -31,5 +31,6 @@
         <mapping resource="\tablas_Clases\Jobs.hbm.xml"/>
         <mapping resource="\tablas_Clases\Locations.hbm.xml"/>
         <mapping resource="\tablas_Clases\Regions.hbm.xml"/>
+        <mapping resource="\tablas_Clases\Usuario.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
