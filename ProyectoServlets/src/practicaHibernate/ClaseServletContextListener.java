@@ -1,10 +1,14 @@
 package practicaHibernate;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import hibernateAll.sesion.manager.SesionManager;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import javax.servlet.http.HttpSession;
 
 import org.hibernate.SessionFactory;
 
@@ -26,11 +30,13 @@ public class ClaseServletContextListener implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent sce) {
 		// TODO Auto-generated method stub
 		int numeroPeticiones =0;
+		HashMap<String,  HttpSession> sesionesActivas = new HashMap<String,  HttpSession>();
 		SessionFactory sf = SesionManager.getSesionFactory();
 		ServletContext servletContext = null;
 		servletContext = sce.getServletContext();
 		servletContext.setAttribute("sf", sf);
 		servletContext.setAttribute("numeroPeticiones", numeroPeticiones);
+		servletContext.setAttribute("sesionesActivas", sesionesActivas);
 		
 		System.out.println("Ha pasado por: ClaseServletContextListener, metodo: contextInitialized");
 	}

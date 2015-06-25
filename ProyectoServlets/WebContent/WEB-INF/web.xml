@@ -89,6 +89,25 @@
     <url-pattern>/ServletSesion</url-pattern>
   </servlet-mapping>
   
+   <servlet>
+    <servlet-name>ServletSesionesActivas</servlet-name>
+    <servlet-class>practicaHibernate.ServletSesionesActivas</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletSesionesActivas</servlet-name>
+    <url-pattern>/ServletSesionesActivas</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>ServletListarDepartamentos</servlet-name>
+    <servlet-class>practicaHibernate.ServletListarDepartamentos</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletListarDepartamentos</servlet-name>
+    <url-pattern>/ServletListarDepartamentos</url-pattern>
+  </servlet-mapping>
+  
+  
   
   <listener>
 	<listener-class>practicaHibernate.ClaseHttpSessionListener</listener-class>
@@ -120,6 +139,8 @@
     <filter-name>FiltroJDBC</filter-name>
     <url-pattern>/ServletEmpleado</url-pattern> 
   </filter-mapping>  
+  
+  <session-config><session-timeout>1</session-timeout></session-config>
   
   
 

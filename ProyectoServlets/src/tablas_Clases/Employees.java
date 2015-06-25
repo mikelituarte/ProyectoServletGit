@@ -216,7 +216,7 @@ public class Employees implements java.io.Serializable {
  		 		"</TD>" +
 		 	
 		 		"<TD WIDTH=200 ALIGN=CENTER BGCOLOR=#F3F3F3>" +
-		 		jobs.getJobId() +
+		 		//jobs.getJobId() +
 		 		"</TD>" +
 		 	"</TR>" +
 		 		
@@ -226,7 +226,7 @@ public class Employees implements java.io.Serializable {
 		 		"</TD>" +
 		 	
 		 		"<TD WIDTH=200 ALIGN=CENTER BGCOLOR=#DFDFDF>" +
-		 			departments.getDepartmentId() +
+		 			//departments.getDepartmentId() +
 		 		"</TD>" +
 		 	"</TR>" +	
 		 		
@@ -236,7 +236,7 @@ public class Employees implements java.io.Serializable {
 		 		"</TD>" +
 		 	
 		 		"<TD WIDTH=200 ALIGN=CENTER BGCOLOR=#F3F3F3>" +
-		 			employees.getEmployeeId()  +
+		 			//employees.getEmployeeId()  +
 		 		"</TD>" +
 		 	"</TR>" +	
 		 		

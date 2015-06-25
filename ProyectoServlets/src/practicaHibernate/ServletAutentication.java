@@ -42,13 +42,13 @@ public class ServletAutentication extends HttpServlet {
 		}
 		if(usuario != null){
 			out.println("Bienvenido <b>"+ usuario.getNombre()+ "</b>");
-			if (req.getSession(false) == null){
+			//if (req.getSession(false) == null){
 				httpSesion = req.getSession(); 
 				httpSesion.setAttribute("user_name", usuario.getNombre());
 				log.trace("leemos el atributo \"user_name\" de la sesion: " + req.getSession(false).getAttribute("user_name"));
-			}
-			else
-				log.trace("Ya existia la sesion:");
+			//}
+			//else
+				//log.trace("Ya existia la sesion:");
 		}
 		else
 			out.println("El usuario NO existe!");
