@@ -107,6 +107,42 @@
     <url-pattern>/ServletListarDepartamentos</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>ServletNoSesion</servlet-name>
+    <servlet-class>practicaHibernate.ServletNoSesion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletNoSesion</servlet-name>
+    <url-pattern>/ServletNoSesion</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ServletRedireccionamiento</servlet-name>
+    <servlet-class>practicaHibernate.ServletRedireccionamiento</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletRedireccionamiento</servlet-name>
+    <url-pattern>/ServletRedireccionamiento</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ServletAlberto</servlet-name>
+    <servlet-class>practicaHibernate.ServletAlberto</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletAlberto</servlet-name>
+    <url-pattern>/ServletAlberto</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>ServletCerrarSesion</servlet-name>
+    <servlet-class>practicaHibernate.ServletCerrarSesion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletCerrarSesion</servlet-name>
+    <url-pattern>/ServletCerrarSesion</url-pattern>
+  </servlet-mapping>
+  
   
   
   <listener>
@@ -129,7 +165,14 @@
   <filter-mapping>
     <filter-name>MiFiltro</filter-name>
     <url-pattern>/ServletEmpleado</url-pattern> 
+    <url-pattern>/ServletListarDepartamentos</url-pattern>
+    <url-pattern>/ServletAlberto</url-pattern>
+    <url-pattern>/ServletRedireccionamiento</url-pattern>
+    <url-pattern>/ServletSesionesActivas</url-pattern>
+    <url-pattern>/ServletSesion</url-pattern>
+    <url-pattern>/ServletCerrarSesion</url-pattern>
   </filter-mapping>  
+   
   
    <filter>
     <filter-name>FiltroJDBC</filter-name>

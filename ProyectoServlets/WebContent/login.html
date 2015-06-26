@@ -9,28 +9,79 @@ body{background-color: #DDDDDD}</style>
 	
 	<!--   <form action="ServletObtenerEmpleado" method="get"> -->
 	<form action="ServletAutentication" method="Post">
-	<blink>Usuario</blink>
+	<!--  <blink>Usuario</blink>
 	<input type="text" name="user_name"></>
 	<blink>Contraseña</blink>
 	<input type="password" name="pass" pas></>
 	<input type="submit" value="Entrar"></>
 	</form>
+	<br>
+	<br>  -->
+	<table>
+		<tr>
+			<td WIDTH=600 HEIGHT= 50>
+				<form action="ServletAutentication" method="Post">
+				<blink>Usuario</blink>
+				<input type="text" name="user_name" title="Introduce tu nombre de usuario"></>
+				<blink>Contraseña</blink>
+				<input type="password" name="pass" pas title="Introduce tu contraseña"></>
+				<input type="submit" value="Entrar" title="Loguearse"></>
+				</form>
+			</td>
+		</tr>
 	
-	<blink>Sesion</blink>
-	<form action="ServletSesion" method="get">
-	<input type="submit" value="Obtener Sesion"></>
-	</form>
+		<tr>
+			<td WIDTH=200 HEIGHT= 30 align="left">
+				<form action="ServletSesion" method="get">
+					<input type="submit" value="Obtener Sesion"></>
+				</form>
+			</td>
+		</tr>
+		
+		<tr>
+			<td WIDTH=200 HEIGHT= 30 align="left">
+				<form action="ServletSesionesActivas" method="get">
+					<input type="submit" value="Sesiones Activas"></>
+				</form>
+			</td>
+		</tr>
+		
+		<tr>
+			<td WIDTH=200 HEIGHT= 30 align="left">
+				<form action="ServletListarDepartamentos" method="get">
+					<input type="submit" value="Lista Departamentos"></>
+				</form>
+			</td>
+		</tr>
 	
-	<blink>Sesiones Activas</blink>
-	<form action="ServletSesionesActivas" method="get">
-	<input type="submit" value="Sesiones Activas"></>
-	</form>
+		<tr>
+			<td WIDTH=200 HEIGHT= 30 align="left">
+				<form action="ServletRedireccionamiento" method="get">
+					<input type="submit" value="Redireccionamiento a ServletEmpleado"></>
+				</form>
+			</td>
+		</tr>
 	
-	<blink>Listado de departamentos</blink>
-	<form action="ServletListarDepartamentos" method="get">
-	<input type="submit" value="Lista Departamentos"></>
-	</form>
-
+		<tr>
+			<td WIDTH=200 HEIGHT= 30 align="left">
+				<form action="ServletAlberto" method="get">
+					<input type="submit" value="Ir a la pagina de Alberto"></>
+				</form>
+			</td>
+		</tr>
+		
+		<tr>
+			<td WIDTH=200 HEIGHT= 30 align="left">
+				<form action="ServletCerrarSesion" method="get">
+					<input type="submit" value="logout"></>
+				</form>
+			</td>
+		</tr>
+	
+	
+	</table>
+	
+	
 
 
 </body>

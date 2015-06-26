@@ -13,15 +13,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import servicios.departamentos.DepartmentsServices;
 import tablas_Clases.Departments;
 
 public class ServletListarDepartamentos extends HttpServlet{
 
+	private final Logger log = LogManager.getRootLogger();
+	private int nVeces;
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException {
-		
+		nVeces++;
+		log.trace("Numero de veces: "+ nVeces);
 		PrintWriter out = null;
 		resp.setContentType("text/html");
 		out = resp.getWriter();
@@ -38,9 +44,11 @@ public class ServletListarDepartamentos extends HttpServlet{
 		}
 		out.println("</select>");
 		out.println("<br>");
+		out.println(nVeces);
 		out.println("<br>");
 		RequestDispatcher disparador = req.getRequestDispatcher("/ServletSesionesActivas");
 		disparador.include(req, resp);
+		
 		
 	}
 }

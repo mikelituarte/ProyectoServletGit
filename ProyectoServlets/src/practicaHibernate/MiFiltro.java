@@ -8,6 +8,8 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -35,7 +37,7 @@ public class MiFiltro implements Filter{
 	public void doFilter(ServletRequest sreq, ServletResponse sresp, FilterChain fc) throws IOException, ServletException {
 		// TODO Auto-generated method stub
 		
-		long antes;
+		/*long antes;
 		antes = System.currentTimeMillis();
 		log.trace("Ha entrado en doFilter de la clase MiFiltro");
 		fc.doFilter(sreq, sresp);
@@ -43,7 +45,24 @@ public class MiFiltro implements Filter{
 		despues = System.currentTimeMillis();
 		log.trace("------------");
 		log.trace("tiempo con Hibernate: "+(despues-antes));
-		log.trace("xxxxxxxxxxxx");
+		log.trace("xxxxxxxxxxxx");*/
+		HttpServletResponse resp = (HttpServletResponse)sresp;
+		HttpServletRequest req = (HttpServletRequest)sreq;//hacemos un casting de ServletRequest a HttpServletRequest
+		String destino = req.getRequestURI();//nos da la ruta a la que quiere ir
+		if(req.getSession(false) == null){// Si no tiene sesion...
+			if(destino.equals("http://172.16.1.19:8090/ProyectoServlets/login.html")){// Si va a la pagina de login...
+				//req.getRequestDispatcher("/ServletNoSesion").include(req, resp);
+				fc.doFilter(sreq, sresp);
+			}
+			else{ //si no va a loguearse, le redirigo a Login
+				//req.getRequestDispatcher("/ServletNoSesion").include(req, resp);
+				resp.sendRedirect("http://172.16.1.19:8090/ProyectoServlets/login.html");
+
+			}
+		}
+		else{// si tiene sesion...
+			fc.doFilter(sreq, sresp);
+		}
 		
 	}
 

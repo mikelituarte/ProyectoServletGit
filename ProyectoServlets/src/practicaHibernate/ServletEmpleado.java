@@ -43,7 +43,6 @@ public class ServletEmpleado extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
 		int numeroPeticiones =0;
 		ServletContext sc = req.getServletContext();
 		numeroPeticiones = (int) sc.getAttribute("numeroPeticiones");
