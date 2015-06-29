@@ -46,21 +46,27 @@ public class MiFiltro implements Filter{
 		log.trace("------------");
 		log.trace("tiempo con Hibernate: "+(despues-antes));
 		log.trace("xxxxxxxxxxxx");*/
+		String destino1 = "/ProyectoServlets/login.html";
+		String destino2 = "http://172.16.1.19:8090/ProyectoServlets/login.html";
+		String destino3 = "/ProyectoServlets/ServletAutentication";
+		String destino4 = "/ProyectoServlets/email.html";
 		HttpServletResponse resp = (HttpServletResponse)sresp;
 		HttpServletRequest req = (HttpServletRequest)sreq;//hacemos un casting de ServletRequest a HttpServletRequest
 		String destino = req.getRequestURI();//nos da la ruta a la que quiere ir
 		if(req.getSession(false) == null){// Si no tiene sesion...
-			if(destino.equals("http://172.16.1.19:8090/ProyectoServlets/login.html")){// Si va a la pagina de login...
+			if(destino.equals(destino2) || destino.equals(destino1) || destino.equals(destino3)  || destino.equals(destino4) ){// Si va a la pagina de login...
 				//req.getRequestDispatcher("/ServletNoSesion").include(req, resp);
 				fc.doFilter(sreq, sresp);
 			}
 			else{ //si no va a loguearse, le redirigo a Login
 				//req.getRequestDispatcher("/ServletNoSesion").include(req, resp);
+				log.trace("La URI es: "+ destino);
 				resp.sendRedirect("http://172.16.1.19:8090/ProyectoServlets/login.html");
 
 			}
 		}
 		else{// si tiene sesion...
+			log.trace("La URI al final es: "+ destino);
 			fc.doFilter(sreq, sresp);
 		}
 		

@@ -117,12 +117,30 @@
   </servlet-mapping>
   
   <servlet>
+    <servlet-name>ServeltMensajeEnviado</servlet-name>
+    <servlet-class>practicaHibernate.ServeltMensajeEnviado</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServeltMensajeEnviado</servlet-name>
+    <url-pattern>/ServeltMensajeEnviado</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
     <servlet-name>ServletRedireccionamiento</servlet-name>
     <servlet-class>practicaHibernate.ServletRedireccionamiento</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletRedireccionamiento</servlet-name>
     <url-pattern>/ServletRedireccionamiento</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ServletMail</servlet-name>
+    <servlet-class>practicaHibernate.ServletMail</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletMail</servlet-name>
+    <url-pattern>/ServletMail</url-pattern>
   </servlet-mapping>
   
   <servlet>
@@ -157,21 +175,15 @@
 	<listener-class>practicaHibernate.ClaseServletRequestListener</listener-class>
   </listener>
   
-   
+  <!--  
   <filter>
     <filter-name>MiFiltro</filter-name>
     <filter-class>practicaHibernate.MiFiltro</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>MiFiltro</filter-name>
-    <url-pattern>/ServletEmpleado</url-pattern> 
-    <url-pattern>/ServletListarDepartamentos</url-pattern>
-    <url-pattern>/ServletAlberto</url-pattern>
-    <url-pattern>/ServletRedireccionamiento</url-pattern>
-    <url-pattern>/ServletSesionesActivas</url-pattern>
-    <url-pattern>/ServletSesion</url-pattern>
-    <url-pattern>/ServletCerrarSesion</url-pattern>
-  </filter-mapping>  
+    <url-pattern>/*</url-pattern> 
+  </filter-mapping>  -->
    
   
    <filter>
