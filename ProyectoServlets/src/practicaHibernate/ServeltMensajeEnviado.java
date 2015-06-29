@@ -12,7 +12,7 @@ public class ServeltMensajeEnviado extends HttpServlet {
 	
 	
 	private String botonVolver(){
-		String res = "";
+		String res = "<br>";
 		res += "<form method=\"get\" action=\"http://172.16.1.19:8090/ProyectoServlets/email.html\">"+
 					"<button type=\"submit\">"+
 						"Volver"+
@@ -28,8 +28,8 @@ public class ServeltMensajeEnviado extends HttpServlet {
 		resp.setContentType("text/html");
 		out = resp.getWriter();
 		
-		out.println("Mensaje enviado!");
-		out.println("Gracias por tu tiempo!");
+		out.println("<b>Mensaje enviado!</b>");
+		out.println(" En breve tu mensaje sera atendido<br>");
 		out.println(botonVolver());
 		//resp.sendRedirect("http://172.16.1.19:8090/ProyectoServlets/email.html");
 	}

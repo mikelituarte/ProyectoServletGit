@@ -14,7 +14,7 @@ public class MainMail {
 
 	public static void main(String[] args) throws AddressException, MessagingException {
 		
-		Properties props = new Properties();
+		/*Properties props = new Properties();
 
 		// Nombre del host de correo, es smtp.gmail.com
 		 props.setProperty("mail.smtp.host", "smtp.gmail.com");
@@ -49,6 +49,10 @@ public class MainMail {
 		 Transport t = session.getTransport("smtp");
 		 t.connect("curso703tic@gmail.com","curso703curso703");
 		 t.sendMessage(message,message.getAllRecipients());
-		 t.close();
+		 t.close();*/
+		String correo ="uff @fgjk.cm";
+		if (correo.contentEquals("@")){
+			System.out.println("mal");
+		}
 	}
 }

@@ -21,6 +21,16 @@ public class ServletMail extends HttpServlet{
 	private final String DESTINO = "curso703tic@gmail.com";
 	
 	
+	private String botonVolver(){
+		String res = "<br>";
+		res += "<form method=\"get\" action=\"http://172.16.1.19:8090/ProyectoServlets/email.html\">"+
+					"<button type=\"submit\">"+
+						"Volver"+
+					"</button>"+
+				"</form>";
+		return res;
+	}
+	
 	private void enviarMensaje(String destino, String mensaje, String remitente) throws AddressException, MessagingException{
 		
 		Properties props = new Properties();
@@ -55,7 +65,7 @@ public class ServletMail extends HttpServlet{
 		 //Quitar esta linea si no se desea recibir el mensaje
 		 message.addRecipient(Message.RecipientType.CC, new InternetAddress(remitente));
 		 
-		 message.setSubject("Hola");
+		 message.setSubject("FAQs Curso703");
 		 message.setText(mensaje);
 		 
 		 Transport t = session.getTransport("smtp");
@@ -63,6 +73,20 @@ public class ServletMail extends HttpServlet{
 		 t.sendMessage(message,message.getAllRecipients());
 		 t.close();
 		
+	}
+	
+	private boolean comprobarCorreo(String correo){
+		boolean res = true;
+		
+		if(!correo.contains(".com") && !correo.contains(".es") && !correo.contains(".org")  ){
+			res = false;
+		}
+		else{
+			if(correo.length() <6  ){
+				res = false;
+			}
+		}
+		return res;
 	}
 	
 	
@@ -74,21 +98,31 @@ public class ServletMail extends HttpServlet{
 		out = resp.getWriter();
 		
 		String remitente = req.getParameter("remitente");
+		String mensajeRecibido = req.getParameter("mensaje");
 		String mensaje = "RESPONDER A: "+ "\"" + remitente.toLowerCase() + "\"\n\n" + (req.getParameter("mensaje"));
-		
-		try {
-			enviarMensaje(DESTINO, mensaje, remitente);
-		} catch (AddressException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (MessagingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if (mensajeRecibido != null && !mensajeRecibido.equals("") && !remitente.equals("")  &&  ValidatorUtil.validateEmail(remitente)) {
+			try {
+				enviarMensaje(DESTINO, mensaje, remitente);
+			} catch (AddressException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (MessagingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			// out.println("Mensaje Enviado!!!!");
+			// out.println("<meta http-equiv=\"Refresh\" content = 2, url = http://172.16.1.19:8090/ProyectoServlets/email.html\"/>");
+			resp.sendRedirect("/ProyectoServlets/ServeltMensajeEnviado");
 		}
-		//out.println("Mensaje Enviado!!!!");
-		//out.println("<meta http-equiv=\"Refresh\" content = 2, url = http://172.16.1.19:8090/ProyectoServlets/email.html\"/>");
-		resp.sendRedirect("/ProyectoServlets/ServeltMensajeEnviado");
-		
+		else{
+			if(!ValidatorUtil.validateEmail(remitente)){
+				out.println("Direccion de correo no valida");
+			}
+			else
+				out.println("Debes rellenar todos los campos");
+			out.println(botonVolver());
+		}
+			
 	}
 	
 	
