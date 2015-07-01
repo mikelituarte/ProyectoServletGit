@@ -8,6 +8,7 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -53,6 +54,9 @@ public class MiFiltro implements Filter{
 		HttpServletResponse resp = (HttpServletResponse)sresp;
 		HttpServletRequest req = (HttpServletRequest)sreq;//hacemos un casting de ServletRequest a HttpServletRequest
 		String destino = req.getRequestURI();//nos da la ruta a la que quiere ir
+		
+		Cookie cookieRatreo = new Cookie("Rastreo", destino);
+		resp.addCookie(cookieRatreo);
 		if(req.getSession(false) == null){// Si no tiene sesion...
 			if(destino.equals(destino2) || destino.equals(destino1) || destino.equals(destino3)  || destino.equals(destino4) ){// Si va a la pagina de login...
 				//req.getRequestDispatcher("/ServletNoSesion").include(req, resp);

@@ -107,6 +107,15 @@
     <url-pattern>/ServletListarDepartamentos</url-pattern>
   </servlet-mapping>
   
+     <servlet>
+    <servlet-name>ServeltCookie</servlet-name>
+    <servlet-class>practicaHibernate.ServeltCookie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServeltCookie</servlet-name>
+    <url-pattern>/ServeltCookie</url-pattern>
+  </servlet-mapping>
+  
   <servlet>
     <servlet-name>ServletNoSesion</servlet-name>
     <servlet-class>practicaHibernate.ServletNoSesion</servlet-class>
@@ -152,7 +161,7 @@
     <url-pattern>/ServletAlberto</url-pattern>
   </servlet-mapping>
   
-    <servlet>
+  <servlet>
     <servlet-name>ServletCerrarSesion</servlet-name>
     <servlet-class>practicaHibernate.ServletCerrarSesion</servlet-class>
   </servlet>
@@ -161,6 +170,14 @@
     <url-pattern>/ServletCerrarSesion</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>ServletError</servlet-name>
+    <servlet-class>practicaHibernate.ServletError</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletError</servlet-name>
+    <url-pattern>/ServletError</url-pattern>
+  </servlet-mapping>
   
   
   <listener>
@@ -186,7 +203,7 @@
   </filter-mapping>  -->
    
   
-   <filter>
+  <filter>
     <filter-name>FiltroJDBC</filter-name>
     <filter-class>practicaJDBC.FiltroJDBC</filter-class>
   </filter>
@@ -198,7 +215,32 @@
   <session-config><session-timeout>1</session-timeout></session-config>
   
   
-
+	<error-page> 
+		<exception-type> java.lang.NumberFormatException </exception-type > 
+		<location>/ServletError </location> 
+	</error-page>
+	
+	<error-page> 
+		<exception-type> javax.servlet.ServletException </exception-type > 
+		<location>/ServletError </location> 
+	</error-page>
+	
+	<error-page> 
+		<exception-type> javax.servlet.error.exception </exception-type > 
+		<location>/ServletError </location> 
+	</error-page>
+	
+	<error-page> 
+		<exception-type> javax.servlet.error.exception </exception-type > 
+		<location>/ServletError </location> 
+	</error-page>
+	
+	<error-page>
+		<error-code>404</error-code>
+		<location>/ServletError</location> 
+	</error-page> 
+	
+  
   
   
   

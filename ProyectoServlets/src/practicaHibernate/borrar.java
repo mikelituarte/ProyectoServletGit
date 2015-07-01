@@ -22,8 +22,9 @@ public class borrar {
 
 	
 	public static void main(String[] args) {
-		String numero = "13";
+		String contenido = "21/12/14 15:35 0";
+		System.out.println(contenido.charAt(contenido.length()-1));
 		
-		System.out.println(isNumeric(numero));
+		//System.out.println(isNumeric(numero));
 	}
 }
