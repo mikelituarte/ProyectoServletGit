@@ -71,7 +71,7 @@
     <url-pattern>/ServletIncrementarSalario</url-pattern>
   </servlet-mapping>
   
-    <servlet>
+  <servlet>
     <servlet-name>ServletAutentication</servlet-name>
     <servlet-class>practicaHibernate.ServletAutentication</servlet-class>
   </servlet>
@@ -105,6 +105,15 @@
   <servlet-mapping>
     <servlet-name>ServletListarDepartamentos</servlet-name>
     <url-pattern>/ServletListarDepartamentos</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ServeltImitacionPrimerJSP</servlet-name>
+    <servlet-class>practicaHibernate.ServeltImitacionPrimerJSP</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServeltImitacionPrimerJSP</servlet-name>
+    <url-pattern>/ServeltImitacionPrimerJSP</url-pattern>
   </servlet-mapping>
   
      <servlet>
@@ -214,7 +223,7 @@
   
   <session-config><session-timeout>1</session-timeout></session-config>
   
-  
+  <!--  
 	<error-page> 
 		<exception-type> java.lang.NumberFormatException </exception-type > 
 		<location>/ServletError </location> 
@@ -238,7 +247,7 @@
 	<error-page>
 		<error-code>404</error-code>
 		<location>/ServletError</location> 
-	</error-page> 
+	</error-page>  -->
 	
   
   

@@ -38,6 +38,10 @@ public class ClaseServletContextListener implements ServletContextListener {
 		servletContext.setAttribute("numeroPeticiones", numeroPeticiones);
 		servletContext.setAttribute("sesionesActivas", sesionesActivas);
 		
+		servletContext.setAttribute("maximo", 100);
+		servletContext.setAttribute("minimo", 1);
+		servletContext.setAttribute("numero", -1);
+		
 		System.out.println("Ha pasado por: ClaseServletContextListener, metodo: contextInitialized");
 	}
 
