@@ -25,11 +25,7 @@ public class ServletEmpleadoJSP extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		int numeroPeticiones =0;
-		/*ServletContext sc = req.getServletContext();
-		numeroPeticiones = (int) sc.getAttribute("numeroPeticiones");
-		sc.setAttribute("numeroPeticiones", (numeroPeticiones+1));*/
-		
+	
 		PrintWriter out = null;
 		Employees empleado = null;
 		EmployeesServices es = new EmployeesServices();
@@ -39,13 +35,12 @@ public class ServletEmpleadoJSP extends HttpServlet {
 		try {
 			empleado = (Employees)es.leerEmpleadoServices(id);
 		} catch (ClassNotFoundException | SQLException e) {
-			log.error("Se ha producido un error al leer Empleado por ID en ServletEmpleado metodo doGet");
+			log.error("Se ha producido un error al leer Empleado por ID en ServletEmpleadoJSP metodo doGet");
 			e.printStackTrace();
 		}
 		if(empleado!=null){
 			req.setAttribute("empleadoBean", empleado);
 			req.getRequestDispatcher("/MostarEmpleado.jsp").forward(req, resp);
-			
 		}
 		else{
 			resp.setContentType("text/html");

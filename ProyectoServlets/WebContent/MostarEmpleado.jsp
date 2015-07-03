@@ -10,14 +10,6 @@
 
 	<!-- Recupero el empleado.. -->
 	<jsp:useBean id="empleadoBean" type="tablas_Clases.Employees" scope="request"></jsp:useBean>
-	<jsp:getProperty property="firstName" name="empleadoBean"/>
-	<jsp:getProperty property="lastName" name="empleadoBean"/>
-	<jsp:getProperty property="employeeId" name="empleadoBean"/>
-	<jsp:getProperty property="email" name="empleadoBean"/>
-	<jsp:getProperty property="phoneNumber" name="empleadoBean"/>
-	<jsp:getProperty property="hireDate" name="empleadoBean"/>
-	<jsp:getProperty property="salary" name="empleadoBean"/>
-	<jsp:getProperty property="commissionPct" name="empleadoBean"/>
 	
 	
 	<br>
