@@ -1,5 +1,8 @@
+<%@page import="tablas_Clases.Employees"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page errorPage="Error.jsp"%>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -10,6 +13,7 @@
 	</head>
 	<body>
 		<%
+
 			// La primera vez que entra...
 			Integer maximo = (Integer)application.getAttribute("maximo");
 			Integer minimo =(Integer)application.getAttribute("minimo");

@@ -80,8 +80,7 @@
 		
 		<jsp:include page="/ServletSesionesActivas"/> -Tiempo de procesamiento
 			(como acción – se genera otro Servlet)
-			<%@ include file="/ServletSesionesActivas"%> - Tiempo de traducción
-				(como directiva – dentro del mismo Servlet)
+
 			
 		
 

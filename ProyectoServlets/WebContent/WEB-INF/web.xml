@@ -134,6 +134,15 @@
     <url-pattern>/ServletNoSesion</url-pattern>
   </servlet-mapping>
   
+    <servlet>
+    <servlet-name>ServletEmpleadoJSP</servlet-name>
+    <servlet-class>practicaHibernate.ServletEmpleadoJSP</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletEmpleadoJSP</servlet-name>
+    <url-pattern>/ServletEmpleadoJSP</url-pattern>
+  </servlet-mapping>
+  
   <servlet>
     <servlet-name>ServeltMensajeEnviado</servlet-name>
     <servlet-class>practicaHibernate.ServeltMensajeEnviado</servlet-class>
@@ -223,7 +232,7 @@
   
   <session-config><session-timeout>1</session-timeout></session-config>
   
-  <!--  
+   
 	<error-page> 
 		<exception-type> java.lang.NumberFormatException </exception-type > 
 		<location>/ServletError </location> 
@@ -247,7 +256,7 @@
 	<error-page>
 		<error-code>404</error-code>
 		<location>/ServletError</location> 
-	</error-page>  -->
+	</error-page> 
 	
   
   
