@@ -81,4 +81,32 @@ public class EmployeesServices {
 		return lista;
 	}
 	
+	public List<Employees> obtenerEmpleadosPorDepartamento(short departamentoID){
+		
+		List<Employees> lista = null;
+		Transaction transaccion = null;
+		
+		try{
+			//obtener una sesion con el sesionManager
+			Session s = SesionManager.getSesion();
+			//esta secion la usara el employeesDao
+			empleadoDao.setSesion(s);
+			//inicio transaccion
+			transaccion = s.beginTransaction();
+			lista = empleadoDao.obtenerEmpleadosPorDepartamento(departamentoID);
+			
+		}
+		catch(Exception e){
+			log.error("Error alobtenerEmpleadosPorDepartamento en la clase EmployeesSevices");
+			e.printStackTrace();
+			transaccion.rollback();
+		}
+		finally{
+			SesionManager.desconectarSesion();
+			SesionManager.cerrarSesion();
+		}
+		
+		return lista;
+	}
+	
 }

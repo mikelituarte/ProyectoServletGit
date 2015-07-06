@@ -98,6 +98,34 @@
     <url-pattern>/ServletSesionesActivas</url-pattern>
   </servlet-mapping>
   
+ <servlet>
+    <servlet-name>ServletObtenerEmpleadoEL</servlet-name>
+    <servlet-class>EmpleadoEL.ServletObtenerEmpleadoEL</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletObtenerEmpleadoEL</servlet-name>
+    <url-pattern>/ServletObtenerEmpleadoEL</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ServletListaDepartamentosMVC</servlet-name>
+    <servlet-class>empleadosPorDepartamentos.ServletListaDepartamentosMVC</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletListaDepartamentosMVC</servlet-name>
+    <url-pattern>/ServletListaDepartamentosMVC</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ServletListaEmpleadosPorDepartamento</servlet-name>
+    <servlet-class>empleadosPorDepartamentos.ServletListaEmpleadosPorDepartamento</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletListaEmpleadosPorDepartamento</servlet-name>
+    <url-pattern>/ServletListaEmpleadosPorDepartamento</url-pattern>
+  </servlet-mapping>
+ 
+  
    <servlet>
     <servlet-name>ServletListarDepartamentos</servlet-name>
     <servlet-class>practicaHibernate.ServletListarDepartamentos</servlet-class>
