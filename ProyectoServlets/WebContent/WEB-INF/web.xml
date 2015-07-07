@@ -216,6 +216,7 @@
     <url-pattern>/ServletCerrarSesion</url-pattern>
   </servlet-mapping>
   
+  
   <servlet>
     <servlet-name>ServletError</servlet-name>
     <servlet-class>practicaHibernate.ServletError</servlet-class>

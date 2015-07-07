@@ -3,7 +3,7 @@
 <%@page import="java.util.Iterator"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 
@@ -34,7 +34,47 @@
 			</button>
 	</form>
 	
-	Lo muestro con JSTL:
+	Lo muestro usando JSTL:
+	<% 
+	String color = "#DDDDDD";
+	int i =0; 
+	%>
+	<table border="0" bgcolor="#00515E">
+		<tr align="center">
+			<td ALIGN=CENTER BGCOLOR=#BBBBBB><b>Nombre</b></td>
+			<td ALIGN=CENTER BGCOLOR=#BBBBBB><b>Apellido</b></td>
+			<td ALIGN=CENTER BGCOLOR=#BBBBBB><b>Telefonor</b></td>
+			<td ALIGN=CENTER BGCOLOR=#BBBBBB><b>Email</b></td>
+			<td ALIGN=CENTER BGCOLOR=#BBBBBB><b>Salario</b></td>
+			<td ALIGN=CENTER BGCOLOR=#BBBBBB><b>Comosion (%)</b></td>
+			<td ALIGN=CENTER BGCOLOR=#BBBBBB><b>Job ID</b></td>
+			<td ALIGN=CENTER BGCOLOR=#BBBBBB><b>Departamento ID</b></td>
+			<td ALIGN=CENTER BGCOLOR=#BBBBBB><b>Hire Date</b></td>
+		</tr>
+		
+		<c:forEach items="${listaEmpleados}" var="empleado">
+			<% if(i%2 ==0){
+				color = "#DDDDDD";
+			}
+			else{
+				color = "#EEEEEE";
+			}
+			%>
+
+		<tr align="center">
+			<td ALIGN=CENTER BGCOLOR=<%=color%>><c:out value="${empleado.firstName}"></c:out></td>
+			<td ALIGN=CENTER BGCOLOR=<%=color%>><c:out value="${empleado.lastName}"></c:out></td>
+			<td ALIGN=CENTER BGCOLOR=<%=color%>><c:out value="${empleado.phoneNumber}"></c:out></td>
+			<td ALIGN=CENTER BGCOLOR=<%=color%>><c:out value="${empleado.email}"></c:out></td>
+			<td ALIGN=CENTER BGCOLOR=<%=color%>><c:out value="${empleado.salary}"></c:out></td>
+			<td ALIGN=CENTER BGCOLOR=<%=color%>><c:out value="${empleado.commissionPct}"></c:out></td>
+			<td ALIGN=CENTER BGCOLOR=<%=color%>><c:out value="${empleado.jobs.jobId}"></c:out></td>
+			<td ALIGN=CENTER BGCOLOR=<%=color%>><c:out value="${empleado.departments.departmentId}"></c:out></td>
+			<td ALIGN=CENTER BGCOLOR=<%=color%>><c:out value="${empleado.hireDate}"></c:out></td>
+		</tr>	
+		<% i++; %>
+		</c:forEach>	
+	</table>
 	
 	
 </body>
