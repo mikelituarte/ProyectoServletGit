@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Good</title>
 </head>
 <body>
 ETIQUETA SIMPLE! <br>
@@ -14,5 +14,8 @@ ETIQUETA SIMPLE! <br>
 <mitag:atrDinamico  num="5">${count}</mitag:atrDinamico>
 <br>ETIQUETA CLASSIC! <br>
 <mitag:classic  num="5" idcountry="${count}">${count}</mitag:classic>
+
+Mostramos los empleados de un departamento con CustomTags:
+<mitag:getEmpleadosPorDepartamento id="80"></mitag:getEmpleadosPorDepartamento>
 </body>
 </html>

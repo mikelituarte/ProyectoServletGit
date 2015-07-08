@@ -54,4 +54,16 @@
             <rtexprvalue>true</rtexprvalue>
         </attribute>
     </tag>
+    
+    <tag>
+        <description>Empleados de un departamentos</description>
+        <name>getEmpleadosPorDepartamento</name>
+        <tag-class>customTags.EtiquetaEmpleadosDepartamento</tag-class>
+        <body-content>empty</body-content><!-- el cuerpo estará vacío -->
+        <attribute>  
+			<name>id</name> <!-- recibo un atributo, aunque no es obligatorio -->
+			<required>true</required>
+		</attribute>
+    </tag>
+    
 </taglib>
